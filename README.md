@@ -1,9 +1,7 @@
-Certainly, here's your updated README note with a comment about the importance of parameterized queries for security when working with user input:
-
 ````markdown
 # Laracasts Course - Session 3
 
-GitHub Repository: [Dynamically Web Application](https://github.com/victor90braz/dinamically-web-application)
+GitHub Repository: [Notes Mini Project](https://github.com/victor90braz/notes-mini-project)
 
 ## Laravel Setup with Laragon
 
