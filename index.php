@@ -8,13 +8,20 @@ $config = require __DIR__ . "/config/config.php";
 
 $dataBase = new DataBase($config["dataBase"]);
 
-$query = "SELECT * from posts where id= ?";
+$posts = "SELECT * from posts";
+$allPosts = $dataBase->query($posts)->fetchAll();
+
+printArray($allPosts);
+
+// remember to add the id to the url
+// http://localhost:8889/?id=2
 $id = $_GET['id'];
+$post = "SELECT * from posts where id= ?";
+$myPost = $dataBase->query($post,[$id])->fetch();
 
-$posts = $dataBase->query($query,[$id])->fetch();
+echo $myPost['title'];
 
-echo $posts['title'];
-printArray($_GET['id']);
+
 
 
 
