@@ -4,7 +4,7 @@
     <h1>My Notes</h1>
     <ol>
         <?php foreach ($notes as $note) : ?>
-            <a href="/notes/?id=<?= $note['id']?>" rel="noopener noreferrer">
+            <a href="/note/?id=<?= $note['id']?>" rel="noopener noreferrer">
                 <li> <?= $note['body'] ?> </li>
             </a>
         <?php endforeach; ?>
