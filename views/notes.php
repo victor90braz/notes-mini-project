@@ -2,7 +2,6 @@
 <?php include __DIR__ . '/partials/nav.php'; ?>
 <main>
     <h1>Things to Do</h1>
-
     <ol>
         <?php foreach ($notes as $note) : ?>
             <li> <?= $note['body'] ?> </li>
