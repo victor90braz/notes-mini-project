@@ -1,7 +1,7 @@
 <?php include __DIR__ . '/partials/banner.php'; ?>
 <?php include __DIR__ . '/partials/nav.php'; ?>
 <main>
-    <h1>My Notes</h1>
+    <h1>Detail Note</h1>
     <ol>
         <?php foreach ($notes as $note) : ?>
             <a href="/note?id=<?= $note['id'] ?>" rel="noopener noreferrer">
