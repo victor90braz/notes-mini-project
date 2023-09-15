@@ -1,10 +1,12 @@
 <?php include __DIR__ . '/partials/banner.php'; ?>
 <?php include __DIR__ . '/partials/nav.php'; ?>
 <main>
-    <h1>Things to Do</h1>
+    <h1>My Notes</h1>
     <ol>
         <?php foreach ($notes as $note) : ?>
-            <li> <?= $note['body'] ?> </li>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+                <li> <?= $note['body'] ?> </li>
+            </a>
         <?php endforeach; ?>
     </ol>
 </main>
