@@ -2,12 +2,8 @@
 <?php include __DIR__ . '/partials/nav.php'; ?>
 <main>
     <h1>Detail Note</h1>
-    <ol>
-        <?php foreach ($notes as $note) : ?>
-            <a href="/note?id=<?= $note['id'] ?>" rel="noopener noreferrer">
-                <li> <?= $note['body'] ?> </li>
-            </a>
-        <?php endforeach; ?>
-    </ol>
+    <a href="/notes" rel="noopener noreferrer"><span>Go Back to Notes</span></a>
+    <hr>
+    <li> <?= $note['body'] ?> </li>
 </main>
 <?php include __DIR__ . '/partials/footer.php'; ?>
