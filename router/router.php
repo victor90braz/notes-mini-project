@@ -5,6 +5,7 @@ $url = parse_url($_SERVER['REQUEST_URI'])["path"];
 $routes = [
     "/" => "./controllers/HomeController.php",
     "/about" => "./controllers/AboutController.php",
+    "/notes" => "./controllers/NotesController.php",
 ];
 
 routeToController($url, $routes);
