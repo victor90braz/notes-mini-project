@@ -1,4 +1,5 @@
 <?php
+require_once 'Response.php';
 
 $url = parse_url($_SERVER['REQUEST_URI'])["path"];
 
@@ -21,8 +22,7 @@ function abort($error) {
 function routeToController($url, $routes) {
 
     if (!array_key_exists($url, $routes)) {
-        $notFoundErrorCode = 404;
-        abort($notFoundErrorCode);
+        abort(Response::NOT_FOUND);
     }
 
     require $routes[$url];
