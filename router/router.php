@@ -11,17 +11,17 @@ $routes = [
 
 routeToController($url, $routes);
 
-function abort() {
-    http_response_code(404);
+function abort($error) {
+    http_response_code($error);
 
-    require 'views/404.php';
+    require "views/{$error}.php";
     die();
 }
 
 function routeToController($url, $routes) {
 
     if (!array_key_exists($url, $routes)) {
-        abort();
+        abort(404);
     }
 
     require $routes[$url];
