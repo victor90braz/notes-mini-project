@@ -20,11 +20,11 @@ class DataBase {
     return $this;
   }
 
-  public function fetch() {
+  public function find() {
     return $this->statement->fetch();
   }
 
-  public function fetchAll() {
+  public function findAll() {
     return $this->statement->fetchAll();
   }
 
