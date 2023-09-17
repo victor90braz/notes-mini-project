@@ -3,6 +3,7 @@
 class DataBase {
 
   public $connection;
+  public $statement;
 
   public function __construct($config, $username = "root", $password = "") {
 
@@ -13,10 +14,18 @@ class DataBase {
 
   public function query ($query, $params=[]) {
 
-    $statement = $this->connection->prepare($query);
-    $statement->execute($params);
+    $this->statement = $this->connection->prepare($query);
+    $this->statement->execute($params);
 
-    return $statement;
+    return $this;
+  }
+
+  public function fetch() {
+    return $this->statement->fetch();
+  }
+
+  public function fetchAll() {
+    return $this->statement->fetchAll();
   }
 
 }
