@@ -21,7 +21,8 @@ function abort($error) {
 function routeToController($url, $routes) {
 
     if (!array_key_exists($url, $routes)) {
-        abort(404);
+        $notFoundErrorCode = 404;
+        abort($notFoundErrorCode);
     }
 
     require $routes[$url];
