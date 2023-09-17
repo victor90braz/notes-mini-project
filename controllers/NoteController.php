@@ -1,5 +1,4 @@
 <?php
-require_once 'Response.php';
 $config = require __DIR__ . "/../config/config.php";
 $dataBase = new DataBase($config["dataBase"]);
 

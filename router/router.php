@@ -1,6 +1,4 @@
 <?php
-require_once 'Response.php';
-
 $url = parse_url($_SERVER['REQUEST_URI'])["path"];
 
 $routes = [
