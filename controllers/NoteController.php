@@ -6,13 +6,15 @@ $dataBase = new DataBase($config["dataBase"]);
 $selectQuery = "SELECT * from notes where id = :id";
 $note = $dataBase->query($selectQuery, ['id' => $_GET['id']])->fetch();
 
+$notFoundErrorCode = 404;
+$unauthorizedErrorCode = 403;
+$currentUserId = 1;
+
 if (!$note) {
-  $notFoundErrorCode = 404;
   abort($notFoundErrorCode);
 }
 
-if ($note['user_id'] !== 1) {
-  $unauthorizedErrorCode = 403;
+if ($note['user_id'] !== $currentUserId) {
   abort($unauthorizedErrorCode);
 }
 
