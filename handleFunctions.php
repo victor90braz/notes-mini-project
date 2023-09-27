@@ -6,4 +6,10 @@ function printArray($data) {
   echo "</pre>";
 }
 
+function authorize($condition, $status = Response::UNAUTHORIZED) {
+  if(!$condition) {
+    abort($status);
+  }
+}
+
 ?>
