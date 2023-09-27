@@ -28,7 +28,7 @@ class DataBase {
     $result = $this->find();
 
     if (!$result) {
-      abort(404);
+      abort(RESPONSE::NOT_FOUND);
     }
 
     return $result;
