@@ -7,9 +7,7 @@ $note = $dataBase->query($selectQuery, ['id' => $_GET['id']])->findOrFail();
 
 $currentUserId = 1;
 
-if ($note['user_id'] !== $currentUserId) {
-  abort(Response::UNAUTHORIZED);
-}
+authorize($note['user_id'] === $currentUserId);
 
 include __DIR__ . "/../views/note.php";
 
