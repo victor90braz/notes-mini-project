@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         $dataBase->query($query, $params);
     } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();  // Handle the error appropriately
+        echo "Error: " . $e->getMessage();
     }
 }
 
