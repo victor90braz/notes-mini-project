@@ -9,5 +9,9 @@
             </a>
         <?php endforeach; ?>
     </ol>
+
+    <p>
+        <a href="/notes/create">Create Notes</a>
+    </p>
 </main>
 <?php include __DIR__ . '/partials/footer.php'; ?>
