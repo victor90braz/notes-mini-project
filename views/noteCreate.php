@@ -7,9 +7,7 @@
     <form action="" method="POST">
       <label for="body">Note</label>
       <textarea name="body" id="body" cols="30" rows="10"></textarea>
-      <p>
-        <button type="submit">Create</button>
-      </p>
+      <button type="submit">Create</button>
     </form>
   </div>
 </main>

@@ -38,6 +38,8 @@ main {
   color: white;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 10px;
+  width: fit-content;
 }
 
 .container-form button:hover {
