@@ -24,6 +24,16 @@ class DataBase {
     return $this->statement->fetch();
   }
 
+  public function findOrFail() {
+    $result = $this->find();
+
+    if (!$result) {
+      abort(404);
+    }
+
+    return $result;
+  }
+
   public function findAll() {
     return $this->statement->fetchAll();
   }
