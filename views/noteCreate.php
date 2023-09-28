@@ -8,7 +8,7 @@
       <textarea name="body" id="body" cols="30" rows="10"></textarea>
       <?php
         if (isset($errors['body'])) : ?>
-          <p><?= $errors['body'] ?></p>
+          <p class="error"><?= $errors['body'] ?></p>
       <?php endif; ?>
       <button type="submit">Create</button>
     </form>

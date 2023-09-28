@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $params = [":body" => $noteBody, ":user_id" => $userId];
 
     if (strlen($noteBody) === 0) {
-        $errors['body'] = 'A body is required';
+        $errors['body'] = 'A body is required.';
     }
 
     if (empty($errors)) {
