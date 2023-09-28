@@ -1,6 +1,7 @@
 <?php
 $config = require __DIR__ . "/../config/config.php";
 $dataBase = new DataBase($config["dataBase"]);
+require __DIR__ . "/../Validator.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $errors = [];
@@ -10,7 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $query = "INSERT INTO notes (body, user_id) VALUES (:body, :user_id)";
     $params = [":body" => $noteBody, ":user_id" => $userId];
 
-    if (strlen($noteBody) === 0) {
+    $validator = new Validator();
+
+    if ($validator->string($noteBody)) {
         $errors['body'] = 'A body is required.';
     }
 
