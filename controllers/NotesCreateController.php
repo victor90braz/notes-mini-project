@@ -14,6 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $errors['body'] = 'A body is required.';
     }
 
+    if (strlen($noteBody) > 1000) {
+        $errors['body'] = 'The body cannot be more then 1,000 characters.';
+    }
+
     if (empty($errors)) {
         try {
             $dataBase->query($query, $params);
