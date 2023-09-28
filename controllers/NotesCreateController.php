@@ -13,12 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $validator = new Validator();
 
-    if ($validator->string($noteBody)) {
-        $errors['body'] = 'A body is required.';
-    }
-
-    if (strlen($noteBody) > 1000) {
-        $errors['body'] = 'The body cannot be more then 1,000 characters.';
+    if (! $validator->string($noteBody, 1, 1000)) {
+        $errors['body'] = 'A body of no more then 1,000 characters is required.';
     }
 
     if (empty($errors)) {

@@ -2,7 +2,9 @@
 
 class Validator {
 
-  function string($value) {
-    return strlen(trim(($value))) === 0;
+  function string($value, $min = 1, $max = INF) {
+    $value = trim($value);
+
+    return strlen($value) >= $min && strlen($value) <= $max;
   }
 }
