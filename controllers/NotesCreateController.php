@@ -11,9 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $query = "INSERT INTO notes (body, user_id) VALUES (:body, :user_id)";
     $params = [":body" => $noteBody, ":user_id" => $userId];
 
-    $validator = new Validator();
-
-    if (! $validator->string($noteBody, 1, 1000)) {
+    if (!Validator::string($noteBody, 1, 1000)) {
         $errors['body'] = 'A body of no more then 1,000 characters is required.';
     }
 
